@@ -197,7 +197,7 @@ export default function DeceptNetIndex() {
                     style={{ fontFamily: 'var(--mono)', fontSize: '12px', padding: '0.5rem 1.1rem', background: 'var(--blue)', color: '#fff', borderRadius: 6, textDecoration: 'none' }}>
                     Open platform dashboard ↗
                   </a>
-                  <a href="https://github.com/himanshunanda22/potential-garbanzo" target="_blank" rel="noreferrer"
+                  <a href="https://github.com/himanshunanda22/DeceptNet" target="_blank" rel="noreferrer"
                     style={{ fontFamily: 'var(--mono)', fontSize: '12px', padding: '0.5rem 1.1rem', background: 'transparent', color: 'var(--blue)', border: '0.5px solid rgba(31,60,136,0.35)', borderRadius: 6, textDecoration: 'none' }}>
                     GitHub repo ↗
                   </a>
