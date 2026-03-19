@@ -79,7 +79,7 @@ export default function DeceptNetIndex() {
         </Reveal>
 
         {/* ── Sub-page cards ── */}
-        <Reveal variant="fadeLeft" duration={600}>
+        {/* <Reveal variant="fadeLeft" duration={600}>
           <div style={{ fontFamily: 'var(--mono)', fontSize: '11px', color: 'var(--ink3)', letterSpacing: '0.1em', textTransform: 'uppercase', marginBottom: '0.4rem' }}>Explore</div>
         </Reveal>
         <Reveal variant="fadeUp" delay={60} duration={650}>
@@ -112,7 +112,7 @@ export default function DeceptNetIndex() {
               </GlowCard>
             </Reveal>
           ))}
-        </div>
+        </div> */}
 
         {/* ── Pipeline ── */}
         <Reveal variant="fadeLeft" duration={600}>
