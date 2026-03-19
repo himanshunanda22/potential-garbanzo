@@ -1,4 +1,4 @@
-# Himanshu Nanda — Portfolio v6
+# Himanshu Nanda — Portfol
 
 Personal portfolio for a data scientist building toward quantitative research.
 Features a Quant Playground with live trading strategy simulations, LangGraph/LangChain
@@ -37,10 +37,6 @@ npm run dev
 # 4. Production build (test before deploying)
 npm run build && npm start
 ```
-
-> **MetaMask error?** Open the site in an Incognito window (`Cmd/Ctrl + Shift + N`).
-> MetaMask injects itself into every page — it has nothing to do with your code.
-
 ---
 
 ## Deploy to GitHub + Vercel
@@ -145,63 +141,6 @@ git push
 
 Vercel picks it up automatically. No manual redeploy needed.
 
----
-
-## File Map
-
-```
-himanshu-portfolio-v6/
-│
-├── lib/
-│   ├── constants.ts     ← ALL personal data — edit this first
-│   └── math.ts          ← GBM, momentum, mean-reversion, pairs, Gaussian PDF
-│
-├── components/
-│   ├── Effects/
-│   │   ├── CustomCursor.tsx     ← blue dot + lagging ring cursor
-│   │   ├── GlowCard.tsx         ← mouse-tracking radial glow on cards
-│   │   ├── MagneticButton.tsx   ← buttons that follow the cursor
-│   │   ├── ParticleField.tsx    ← rising math symbols canvas background
-│   │   ├── Reveal.tsx           ← scroll-triggered fade/slide animations
-│   │   ├── TypewriterText.tsx   ← cycling typewriter in hero subline
-│   │   ├── CountUp.tsx          ← animated number counter (education scores)
-│   │   └── SmoothProgress.tsx   ← animated skill progress bars
-│   │
-│   ├── Nav/             ← sticky nav + reading progress bar
-│   ├── Hero/            ← floating equations + particles + typewriter + CTAs
-│   ├── About/           ← cards + skill bars + Gaussian curve + terminal
-│   ├── GaussianCurve/   ← interactive N(μ,σ) canvas with sliders
-│   ├── Scene/           ← easter egg CLI terminal
-│   ├── Playground/      ← 4-strategy trading simulator (canvas-drawn paths)
-│   ├── Agentic/         ← LangGraph state machine + projects + code snippet
-│   ├── Education/       ← animated timeline, expandable cards, CountUp scores
-│   ├── Research/        ← Springer Nature publication card
-│   ├── Articles/        ← writing cards with glow effect
-│   ├── Contact/         ← email + social links with slide-in animation
-│   └── Section/         ← shared section wrapper + Divider
-│
-├── hooks/
-│   └── useScrollReveal.ts
-│
-├── pages/
-│   ├── _app.tsx         ← mounts CustomCursor globally
-│   └── index.tsx        ← assembles all sections
-│
-├── styles/globals.css   ← fonts, CSS variables, all keyframes
-└── public/              ← drop resume.pdf here
-```
-
----
-
-## Personalisation Checklist
-
-- [ ] `lib/constants.ts` → update `PERSON` (especially `github`)
-- [ ] `lib/constants.ts` → update `EDUCATION[0].institution` with your university name
-- [ ] `public/resume.pdf` → add your resume
-- [ ] `lib/constants.ts` → update `ARTICLES` as you publish more writing
-- [ ] `lib/constants.ts` → update `AGENTIC_PROJECTS` statuses as you complete projects
-- [ ] `components/Research/ResearchSection.tsx` → add paper title once published
-- [ ] `lib/constants.ts` → update `RESEARCH.title` once the Springer paper is live
 
 ---
 
