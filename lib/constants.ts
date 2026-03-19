@@ -37,14 +37,26 @@ export const SKILLS = [
 
 // ─── Articles ─────────────────────────────────────────────────────────────────
 export const ARTICLES = [
+  // ── DeceptNet v2 — interactive project entry (renders as a project card) ──
+  {
+    tag: 'R&D Project · Cybersecurity × RL',
+    title: 'DeceptNet v2 — MDP-Enhanced Neural Deception Gateway',
+    excerpt:
+      'A cybersecurity middleware that uses Markov Decision Processes and Double DQN to intercept attacker sessions, respond with convincing fake data, and continuously learn optimal deception policies from live traffic. Includes a live platform dashboard, animated session simulation, and deep mathematical explainers.',
+    url: '/deceptnet',          // internal Next.js route — opens the playground
+    status: 'published' as const,
+    isProject: true,            // renders with project card styling
+  },
+  // ── Published Medium article ───────────────────────────────────────────────
   {
     tag: 'Medium · Statistics',
     title: 'I Tried to Fit a Line to Some Data and Ended Up Questioning How Reality Generates Points',
     excerpt:
       'A journey from ordinary least squares into the generative assumptions hiding beneath every regression model — and what happens when those assumptions break.',
-    url: 'https://medium.com',
+    url: 'https://medium.com/@himanshunanda2002/i-tried-to-fit-a-line-to-some-data-and-ended-up-questioning-how-reality-generates-points-e003c18235a7',
     status: 'published' as const,
   },
+  // ── Drafts ────────────────────────────────────────────────────────────────
   {
     tag: 'Draft in Progress',
     title: 'The Geometry of Risk: Why Covariance Matrices Are Not Just Spreadsheets',
@@ -104,7 +116,7 @@ export const EDUCATION = [
   {
     id: 'btech',
     degree: 'B.Tech — Computer Science & Engineering',
-    institution: 'PES University',           // ← update with your actual university
+    institution: 'PES University',
     institutionShort: 'B.Tech CSE',
     location: 'India',
     period: '2021 - 2025',
@@ -112,7 +124,7 @@ export const EDUCATION = [
     scoreType: 'cgpa' as const,
     icon: '⬡',
     highlights: [
-      'Specialisation in Cybersecuirty, AI, and Data Science',
+      'Specialisation in Cybersecurity, AI, and Data Science',
       'Published research paper at ICCCT 2025 (Springer Nature)',
       'Active participant in competitive programming and hackathons',
     ],
