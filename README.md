@@ -1,4 +1,4 @@
-# Himanshu Nanda — Portfol
+# Himanshu Nanda — Portfolio
 
 Personal portfolio for a data scientist building toward quantitative research.
 Features a Quant Playground with live trading strategy simulations, LangGraph/LangChain
