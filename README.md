@@ -111,15 +111,6 @@ Every time you `git push` to `main`, Vercel redeploys automatically.
 
 ---
 
-### Step 5 — Custom domain (optional)
-
-**Buy a domain** — recommended options:
-- `nandaquant.com`
-- `himanshunanda.com`
-- `himanshuquant.com`
-
-Good registrars: [Namecheap](https://namecheap.com) (~$10/yr) or [Google Domains](https://domains.google).
-
 **Connect it to Vercel:**
 1. In Vercel → your project → **Settings** → **Domains**
 2. Click **Add** → type your domain
