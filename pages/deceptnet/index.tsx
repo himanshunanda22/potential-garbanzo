@@ -7,21 +7,21 @@ import DeceptNetLayout from '../../components/DeceptNet/DeceptNetLayout'
 // ── Sub-page cards ─────────────────────────────────────────────────────────────
 const SUB_PAGES = [
   {
-    href: '/deceptnet/simulation',
+    href: '/deceptnet/simulation.html',
     tag: 'Interactive · 3 scenarios',
     title: 'Session simulation',
     excerpt: 'Step through a complete attacker session request by request — feature extraction, ThreatNet classification, MDP state building, Q-value computation, deception response, footprint capture, and Bellman update, all animated live.',
     glow: '31,60,136',
   },
   {
-    href: '/deceptnet/explainer',
+    href: '/deceptnet/explainer.html',
     tag: 'Reference · MathJax rendered',
     title: 'Architecture & mathematics',
     excerpt: 'MDP formulation, state encoding, Bellman optimality, Double DQN target, reward shaping, and training pipeline — every equation typeset and linked to the code that implements it.',
     glow: '78,205,196',
   },
   {
-    href: '/deceptnet/deep-explainer',
+    href: '/deceptnet/deep-explainer.html',
     tag: 'Deep dive · 7 chapters',
     title: 'From classifier to decision engine',
     excerpt: 'The complete story: why v1 wasn\'t enough, what the finite-to-infinite projection means mathematically, the Bellman equation derived from scratch, Double DQN explained, and interactive demos throughout.',
@@ -215,20 +215,20 @@ export default function DeceptNetIndex() {
               <span style={{ color: '#555', fontSize: '11px', marginLeft: '0.5rem', fontFamily: 'var(--mono)' }}>quick_start.sh</span>
             </div>
             <pre style={{ padding: '1.25rem', margin: 0, fontSize: '12px', lineHeight: 2, overflowX: 'auto', fontFamily: 'var(--mono)', color: '#c8f6c8' }}>
-              {`# Install dependencies
-              pip install -r requirements.txt
+  {`# Install dependencies
+  pip install -r requirements.txt
 
-              # Train classifier + pre-train MDP Q-network
-              bash run.sh train
+  # Train classifier + pre-train MDP Q-network
+  bash run.sh train
 
-              # Start the gateway on :8000
-              bash run.sh serve
+  # Start the gateway on :8000
+  bash run.sh serve
 
-              # Simulate attacks (new terminal)
-              bash run.sh test
+  # Simulate attacks (new terminal)
+  bash run.sh test
 
-              # Open platform dashboard
-              open deceptive-nn-v2/platform/index.html`}
+  # Open platform dashboard
+  open deceptive-nn-v2/platform/index.html`}
             </pre>
           </div>
         </Reveal>

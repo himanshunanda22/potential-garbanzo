@@ -8,9 +8,9 @@ interface Props { children: React.ReactNode; title?: string }
 
 const PAGES = [
   { href: '/deceptnet',                label: 'Overview'    },
-  { href: '/deceptnet/simulation',     label: 'Simulation'  },
-  { href: '/deceptnet/explainer',      label: 'Mathematics' },
-  { href: '/deceptnet/deep-explainer', label: 'Deep dive'   },
+  { href: '/deceptnet/simulation.html',     label: 'Simulation'  },
+  { href: '/deceptnet/explainer.html',      label: 'Mathematics' },
+  { href: '/deceptnet/deep-explainer.html', label: 'Deep dive'   },
 ]
 
 export default function DeceptNetLayout({ children, title = 'DeceptNet' }: Props) {
