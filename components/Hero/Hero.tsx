@@ -82,7 +82,7 @@ export default function Hero({
               background: 'var(--coral)', display: 'inline-block',
               animation: 'pulse 2s ease-in-out infinite',
             }} />
-            {PERSON.role} → {PERSON.aspiration}
+            {PERSON.role} · {PERSON.aspiration}
           </div>
         </Reveal>
 
@@ -94,9 +94,8 @@ export default function Hero({
             fontWeight: 700, lineHeight: 1.08,
             marginBottom: '0.5rem', color: 'var(--ink)',
           }}>
-            Mathematics is<br />
-            the language of{' '}
-            <em style={{ fontStyle: 'italic', color: 'var(--blue)' }}>uncertainty.</em>
+            Building AI systems that{' '}
+            <em style={{ fontStyle: 'italic', color: 'var(--blue)' }}>reason, learn, and ship.</em>
           </h1>
         </Reveal>
 
@@ -110,11 +109,11 @@ export default function Hero({
             Currently building:{' '}
             <Typewriter
               words={[
-                'LangGraph multi-agent systems.',
-                'Monte Carlo simulations.',
-                'Quant strategy backtests.',
-                'Stochastic process models.',
-                'RAG pipelines for finance.',
+                'LLM reasoning systems.',
+                'Modern ML experiments.',
+                'RAG and evaluation pipelines.',
+                'Agentic AI workflows.',
+                'Model performance optimization.',
               ]}
               style={{ color: 'var(--blue)' }}
             />
@@ -127,9 +126,9 @@ export default function Hero({
             fontSize: '15px', color: 'var(--ink2)',
             maxWidth: '560px', lineHeight: 1.8, marginBottom: '2rem',
           }}>
-            I&apos;m a {PERSON.age}-year-old data scientist at {PERSON.company}, building toward
-            quantitative research. I study stochastic calculus, build agentic AI systems with
-            LangGraph, and work at the intersection of ML, finance, and rigorous mathematics.
+            I&apos;m a {PERSON.age}-year-old applied ML practitioner at {PERSON.company}, building
+            toward a career as an Applied Scientist in LLMs and machine learning. I work across
+            model development, evaluation, agentic AI, and research-driven experimentation.
           </p>
         </Reveal>
 

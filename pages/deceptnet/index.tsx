@@ -1,33 +1,6 @@
 import { useState } from 'react'
-import { useRouter } from 'next/router'
 import Reveal from '../../components/Effects/Reveal'
-import GlowCard from '../../components/Effects/GlowCard'
 import DeceptNetLayout from '../../components/DeceptNet/DeceptNetLayout'
-
-// ── Sub-page cards ─────────────────────────────────────────────────────────────
-const SUB_PAGES = [
-  {
-    href: '/deceptnet/simulation.html',
-    tag: 'Interactive · 3 scenarios',
-    title: 'Session simulation',
-    excerpt: 'Step through a complete attacker session request by request — feature extraction, ThreatNet classification, MDP state building, Q-value computation, deception response, footprint capture, and Bellman update, all animated live.',
-    glow: '31,60,136',
-  },
-  {
-    href: '/deceptnet/explainer.html',
-    tag: 'Reference · MathJax rendered',
-    title: 'Architecture & mathematics',
-    excerpt: 'MDP formulation, state encoding, Bellman optimality, Double DQN target, reward shaping, and training pipeline — every equation typeset and linked to the code that implements it.',
-    glow: '78,205,196',
-  },
-  {
-    href: '/deceptnet/deep-explainer.html',
-    tag: 'Deep dive · 7 chapters',
-    title: 'From classifier to decision engine',
-    excerpt: 'The complete story: why v1 wasn\'t enough, what the finite-to-infinite projection means mathematically, the Bellman equation derived from scratch, Double DQN explained, and interactive demos throughout.',
-    glow: '123,97,255',
-  },
-]
 
 // ── Pipeline steps ─────────────────────────────────────────────────────────────
 const PIPELINE = [
@@ -43,162 +16,95 @@ const STACK = ['PyTorch', 'FastAPI', 'Double DQN', 'MDP', 'Online RL', 'SQLite']
 
 export default function DeceptNetIndex() {
   const [open, setOpen] = useState(false)
-  const router = useRouter()
 
   return (
     <DeceptNetLayout title="DeceptNet v2 — Playground">
-      <div style={{ maxWidth: '860px', margin: '0 auto', padding: '5rem 2rem 4rem' }}>
-
-        {/* ── Hero ── */}
+      <div className="deceptnet-page">
         <Reveal variant="fadeLeft" duration={600}>
-          <div style={{ fontFamily: 'var(--mono)', fontSize: '11px', color: 'var(--ink3)', letterSpacing: '0.1em', textTransform: 'uppercase', marginBottom: '0.4rem' }}>
-            R&D Project
-          </div>
+          <div className="deceptnet-kicker">R&D Project</div>
         </Reveal>
         <Reveal variant="fadeUp" delay={60} duration={650}>
-          <h1 style={{ fontFamily: 'var(--serif)', fontSize: 'clamp(1.6rem, 3vw, 2.6rem)', fontWeight: 700, marginBottom: '0.3rem', color: 'var(--ink)', lineHeight: 1.1 }}>
-            DeceptNet v2
-          </h1>
+          <h1 className="deceptnet-title">DeceptNet v2</h1>
         </Reveal>
         <Reveal variant="fadeUp" delay={120} duration={600}>
-          <p style={{ fontFamily: 'var(--serif)', fontStyle: 'italic', fontSize: '1rem', color: 'var(--ink2)', marginBottom: '1.25rem' }}>
-            Cybersecurity × Reinforcement Learning
-          </p>
+          <p className="deceptnet-subtitle">Cybersecurity × Reinforcement Learning</p>
         </Reveal>
         <Reveal variant="fadeUp" delay={160} duration={600}>
-          <p style={{ fontSize: '15px', color: 'var(--ink2)', maxWidth: '580px', lineHeight: 1.8, marginBottom: '1.5rem' }}>
-            A middleware that uses a <strong style={{ color: 'var(--ink)' }}>Markov Decision Process</strong> and <strong style={{ color: 'var(--ink)' }}>Double DQN</strong> to intercept attacker sessions, respond with convincing fake data, and continuously learn optimal deception policies from live traffic.
+          <p className="deceptnet-summary">
+            A middleware that uses a <strong className="deceptnet-emphasis">Markov Decision Process</strong> and <strong className="deceptnet-emphasis">Double DQN</strong> to intercept attacker sessions, respond with convincing fake data, and continuously learn optimal deception policies from live traffic.
           </p>
         </Reveal>
         <Reveal variant="fadeUp" delay={200} duration={600}>
-          <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.4rem', marginBottom: '3rem' }}>
+          <div className="deceptnet-tag-list">
             {STACK.map(t => (
-              <span key={t} style={{ fontFamily: 'var(--mono)', fontSize: '11px', padding: '0.2rem 0.65rem', borderRadius: 100, border: '0.5px solid rgba(31,60,136,0.35)', color: 'var(--blue)', background: 'rgba(31,60,136,0.05)' }}>{t}</span>
+              <span key={t} className="deceptnet-tag">{t}</span>
             ))}
           </div>
         </Reveal>
 
-        {/* ── Sub-page cards ── */}
-        {/* <Reveal variant="fadeLeft" duration={600}>
-          <div style={{ fontFamily: 'var(--mono)', fontSize: '11px', color: 'var(--ink3)', letterSpacing: '0.1em', textTransform: 'uppercase', marginBottom: '0.4rem' }}>Explore</div>
-        </Reveal>
-        <Reveal variant="fadeUp" delay={60} duration={650}>
-          <h2 style={{ fontFamily: 'var(--serif)', fontSize: 'clamp(1.3rem, 2.5vw, 1.8rem)', fontWeight: 700, marginBottom: '1.5rem', color: 'var(--ink)' }}>
-            Sections
-          </h2>
-        </Reveal>
-
-        <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem', marginBottom: '3.5rem' }}>
-          {SUB_PAGES.map((p, i) => (
-            <Reveal key={p.href} variant="fadeUp" delay={i * 80}>
-              <GlowCard
-                glowColor={p.glow}
-                style={{ padding: '1.5rem', cursor: 'pointer' }}
-              >
-                <div onClick={() => router.push(p.href)}>
-                  <div style={{ fontFamily: 'var(--mono)', fontSize: '10px', letterSpacing: '0.08em', textTransform: 'uppercase', color: 'var(--coral)', marginBottom: '0.55rem' }}>
-                    {p.tag}
-                  </div>
-                  <div style={{ fontFamily: 'var(--serif)', fontSize: '1.1rem', fontWeight: 700, marginBottom: '0.5rem', lineHeight: 1.35 }}>
-                    {p.title}
-                  </div>
-                  <div style={{ fontSize: '13px', color: 'var(--ink2)', lineHeight: 1.65 }}>
-                    {p.excerpt}
-                  </div>
-                  <div style={{ marginTop: '0.8rem', fontFamily: 'var(--mono)', fontSize: '11px', color: 'var(--blue)', display: 'flex', alignItems: 'center', gap: '0.3rem' }}>
-                    <span>Open</span><span>→</span>
-                  </div>
-                </div>
-              </GlowCard>
-            </Reveal>
-          ))}
-        </div> */}
-
-        {/* ── Pipeline ── */}
         <Reveal variant="fadeLeft" duration={600}>
-          <div style={{ fontFamily: 'var(--mono)', fontSize: '11px', color: 'var(--ink3)', letterSpacing: '0.1em', textTransform: 'uppercase', marginBottom: '0.4rem' }}>How it works</div>
+          <div className="deceptnet-section-header">How it works</div>
         </Reveal>
         <Reveal variant="fadeUp" delay={60} duration={650}>
-          <h2 style={{ fontFamily: 'var(--serif)', fontSize: 'clamp(1.3rem, 2.5vw, 1.8rem)', fontWeight: 700, marginBottom: '1.5rem', color: 'var(--ink)' }}>
-            The pipeline
-          </h2>
+          <h2 className="deceptnet-section-title">The pipeline</h2>
         </Reveal>
 
         <Reveal variant="fadeUp" delay={100}>
-          <div style={{ border: '0.5px solid rgba(26,26,24,0.1)', borderRadius: 12, background: '#fff', overflow: 'hidden', marginBottom: '3rem' }}>
-            <div style={{ background: 'var(--blue)', padding: '0.7rem 1.25rem', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-              <span style={{ fontFamily: 'var(--mono)', fontSize: '11px', color: 'rgba(255,255,255,0.85)', letterSpacing: '0.06em' }}>REQUEST_LIFECYCLE</span>
-              <span style={{ width: 8, height: 8, borderRadius: '50%', background: 'var(--teal)', display: 'inline-block', animation: 'pulse 2s ease-in-out infinite' }} />
+          <div className="deceptnet-pipeline-shell">
+            <div className="deceptnet-pipeline-header">
+              <span className="deceptnet-pipeline-label">REQUEST_LIFECYCLE</span>
+              <span className="deceptnet-pipeline-status" />
             </div>
-            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', padding: '0' }}>
+            <div className="deceptnet-pipeline-grid">
               {PIPELINE.map((s, i) => (
-                <div key={s.step} style={{
-                  padding: '1rem 1.25rem',
-                  borderRight: (i + 1) % 3 !== 0 ? '0.5px solid rgba(26,26,24,0.07)' : 'none',
-                  borderBottom: i < 3 ? '0.5px solid rgba(26,26,24,0.07)' : 'none',
-                }}>
-                  <div style={{ fontFamily: 'var(--mono)', fontSize: '10px', color: 'var(--ink3)', letterSpacing: '0.06em', marginBottom: '0.3rem' }}>{s.step}</div>
-                  <div style={{ fontFamily: 'var(--serif)', fontSize: '0.95rem', fontWeight: 700, marginBottom: '0.3rem' }}>{s.title}</div>
-                  <div style={{ fontSize: '12px', color: 'var(--ink2)', lineHeight: 1.6 }}>{s.body}</div>
+                <div
+                  key={s.step}
+                  className={`deceptnet-pipeline-step ${i < 3 ? 'is-top-row' : ''} ${(i + 1) % 3 !== 0 ? 'has-right-border' : ''}`}
+                >
+                  <div className="deceptnet-pipeline-step-index">{s.step}</div>
+                  <div className="deceptnet-pipeline-step-title">{s.title}</div>
+                  <div className="deceptnet-pipeline-step-body">{s.body}</div>
                 </div>
               ))}
             </div>
           </div>
         </Reveal>
 
-        {/* ── Live dashboard toggle ── */}
         <Reveal variant="fadeLeft" duration={600}>
-          <div style={{ fontFamily: 'var(--mono)', fontSize: '11px', color: 'var(--ink3)', letterSpacing: '0.1em', textTransform: 'uppercase', marginBottom: '0.4rem' }}>Local gateway</div>
+          <div className="deceptnet-section-header">Local gateway</div>
         </Reveal>
         <Reveal variant="fadeUp" delay={60} duration={650}>
-          <h2 style={{ fontFamily: 'var(--serif)', fontSize: 'clamp(1.3rem, 2.5vw, 1.8rem)', fontWeight: 700, marginBottom: '0.5rem', color: 'var(--ink)' }}>
-            Platform dashboard
-          </h2>
+          <h2 className="deceptnet-section-title">Platform dashboard</h2>
         </Reveal>
         <Reveal variant="fadeUp" delay={100}>
-          <p style={{ fontFamily: 'var(--serif)', fontStyle: 'italic', fontSize: '0.9rem', color: 'var(--ink2)', marginBottom: '1rem' }}>
-            Requires the DeceptNet gateway running locally — <code style={{ fontFamily: 'var(--mono)', fontSize: '11px', color: 'var(--blue)' }}>bash run.sh serve</code>
+          <p className="deceptnet-local-note">
+            Requires the DeceptNet gateway running locally — <code className="deceptnet-inline-code">bash run.sh serve</code>
           </p>
         </Reveal>
 
         <Reveal variant="fadeUp" delay={140}>
-          <div style={{ border: '0.5px solid rgba(26,26,24,0.1)', borderRadius: 12, background: '#fff', overflow: 'hidden', marginBottom: '1rem' }}>
-            <button
-              onClick={() => setOpen(o => !o)}
-              style={{
-                width: '100%', padding: '1rem 1.25rem',
-                display: 'flex', alignItems: 'center', justifyContent: 'space-between',
-                background: open ? 'rgba(31,60,136,0.03)' : 'transparent',
-                border: 'none', cursor: 'pointer', textAlign: 'left',
-                transition: 'background 0.2s',
-              }}
-            >
+          <div className="deceptnet-dashboard-shell">
+            <button onClick={() => setOpen(o => !o)} className={`deceptnet-dashboard-toggle ${open ? 'is-open' : ''}`}>
               <div>
-                <div style={{ fontFamily: 'var(--mono)', fontSize: '10px', color: 'var(--coral)', letterSpacing: '0.08em', textTransform: 'uppercase', marginBottom: '0.2rem' }}>
-                  Live threat dashboard
-                </div>
-                <div style={{ fontSize: '14px', color: 'var(--ink)', lineHeight: 1.4 }}>
+                <div className="deceptnet-dashboard-toggle-label">Live threat dashboard</div>
+                <div className="deceptnet-dashboard-toggle-text">
                   Real-time intercept log, Q-value visualiser, threat type breakdown, MDP agent status
                 </div>
               </div>
-              <span style={{ fontFamily: 'var(--mono)', fontSize: '14px', color: 'var(--ink3)', transform: open ? 'rotate(180deg)' : 'rotate(0deg)', transition: 'transform 0.3s cubic-bezier(0.22,1,0.36,1)', display: 'inline-block', flexShrink: 0, marginLeft: '1rem' }}>↓</span>
+              <span className="deceptnet-dashboard-chevron">↓</span>
             </button>
 
             {open && (
-              <div style={{ borderTop: '0.5px solid rgba(26,26,24,0.07)', padding: '2rem', textAlign: 'center' }}>
-                <div style={{ fontFamily: 'var(--serif)', fontSize: '1.1rem', fontWeight: 700, marginBottom: '0.5rem' }}>
-                  Start the gateway first
+              <div className="deceptnet-dashboard-body">
+                <div className="deceptnet-dashboard-title">Start the gateway first</div>
+                <div className="deceptnet-dashboard-copy">
+                  The platform dashboard is a static file that connects to the FastAPI backend on :8000. Run <code className="deceptnet-inline-code">bash run.sh serve</code> then open it below.
                 </div>
-                <div style={{ fontSize: '13px', color: 'var(--ink2)', lineHeight: 1.7, maxWidth: '400px', margin: '0 auto 1.25rem' }}>
-                  The platform dashboard is a static file that connects to the FastAPI backend on :8000. Run <code style={{ fontFamily: 'var(--mono)', fontSize: '11px', color: 'var(--blue)' }}>bash run.sh serve</code> then open it below.
-                </div>
-                <div style={{ display: 'flex', gap: '0.75rem', justifyContent: 'center', flexWrap: 'wrap' }}>
-                  <a href="http://localhost:8000" target="_blank" rel="noreferrer"
-                    style={{ fontFamily: 'var(--mono)', fontSize: '12px', padding: '0.5rem 1.1rem', background: 'var(--blue)', color: '#fff', borderRadius: 6, textDecoration: 'none' }}>
+                <div className="deceptnet-dashboard-link-row">
+                  <a href="http://localhost:8000" target="_blank" rel="noopener noreferrer" className="deceptnet-primary-link">
                     Open platform dashboard ↗
                   </a>
-                  <a href="https://github.com/himanshunanda22/DeceptNet" target="_blank" rel="noreferrer"
-                    style={{ fontFamily: 'var(--mono)', fontSize: '12px', padding: '0.5rem 1.1rem', background: 'transparent', color: 'var(--blue)', border: '0.5px solid rgba(31,60,136,0.35)', borderRadius: 6, textDecoration: 'none' }}>
+                  <a href="https://github.com/himanshunanda22/DeceptNet" target="_blank" rel="noopener noreferrer" className="deceptnet-secondary-link">
                     GitHub repo ↗
                   </a>
                 </div>
@@ -207,15 +113,20 @@ export default function DeceptNetIndex() {
           </div>
         </Reveal>
 
-        {/* ── Quick start ── */}
         <Reveal variant="fadeUp" delay={160}>
-          <div style={{ border: '0.5px solid rgba(26,26,24,0.1)', borderRadius: 12, background: '#1a1a18', overflow: 'hidden' }}>
-            <div style={{ background: '#252522', padding: '0.6rem 1.25rem', display: 'flex', alignItems: 'center', gap: '0.4rem', borderBottom: '0.5px solid rgba(255,255,255,0.05)' }}>
-              {['#ff5f57','#febc2e','#28c840'].map(c => <span key={c} style={{ width: 9, height: 9, borderRadius: '50%', background: c, display: 'inline-block' }} />)}
-              <span style={{ color: '#555', fontSize: '11px', marginLeft: '0.5rem', fontFamily: 'var(--mono)' }}>quick_start.sh</span>
+          <div className="deceptnet-terminal-shell">
+            <div className="deceptnet-terminal-header">
+              {[
+                { color: 'terminal-red', value: '#ff5f57' },
+                { color: 'terminal-yellow', value: '#febc2e' },
+                { color: 'terminal-green', value: '#28c840' },
+              ].map(dot => (
+                <span key={dot.color} className={`deceptnet-terminal-dot ${dot.color}`} aria-hidden="true" />
+              ))}
+              <span className="deceptnet-terminal-caption">quick_start.sh</span>
             </div>
-            <pre style={{ padding: '1.25rem', margin: 0, fontSize: '12px', lineHeight: 2, overflowX: 'auto', fontFamily: 'var(--mono)', color: '#c8f6c8' }}>
-  {`# Install dependencies
+            <pre className="deceptnet-terminal-pre">
+{`# Install dependencies
   pip install -r requirements.txt
 
   # Train classifier + pre-train MDP Q-network
@@ -232,7 +143,6 @@ export default function DeceptNetIndex() {
             </pre>
           </div>
         </Reveal>
-
       </div>
     </DeceptNetLayout>
   )

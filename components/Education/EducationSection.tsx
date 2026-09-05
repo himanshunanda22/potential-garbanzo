@@ -28,17 +28,15 @@ export default function EducationSection() {
 
   return (
     <div>
-      {/* Quant path callout */}
+      {/* LLM / ML path callout */}
       <Reveal variant="fadeUp" delay={0}>
         <div style={{ border: '0.5px solid rgba(31,60,136,0.2)', borderRadius: 10, background: 'rgba(31,60,136,0.03)', padding: '1rem 1.25rem', marginBottom: '1.5rem', display: 'flex', alignItems: 'flex-start', gap: '0.75rem' }}>
           <span style={{ fontFamily: 'var(--mono)', fontSize: '18px', color: 'var(--blue)', opacity: 0.4, flexShrink: 0 }}>→</span>
           <div>
-            <div style={{ fontFamily: 'var(--mono)', fontSize: '11px', color: 'var(--blue)', letterSpacing: '0.06em', marginBottom: '0.3rem' }}>SELF-DIRECTED QUANT PATH</div>
+            <div style={{ fontFamily: 'var(--mono)', fontSize: '11px', color: 'var(--blue)', letterSpacing: '0.06em', marginBottom: '0.3rem' }}>SELF-DIRECTED LLM / ML PATH</div>
             <p style={{ fontSize: '13px', color: 'var(--ink2)', lineHeight: 1.65, margin: 0 }}>
-              Beyond formal education, I&apos;m self-studying the mathematical foundations of quantitative finance —
-              Shreve&apos;s <em style={{ fontFamily: 'var(--serif)' }}>Stochastic Calculus for Finance</em>,
-              Glasserman&apos;s <em style={{ fontFamily: 'var(--serif)' }}>Monte Carlo Methods</em>, and
-              Gatheral&apos;s <em style={{ fontFamily: 'var(--serif)' }}>The Volatility Surface</em>.
+              Beyond formal education, I&apos;m expanding around model design, retrieval systems, and evaluation —
+              studying transformer fundamentals, LLM pipelines, and practical patterns for building reliable AI systems.
             </p>
           </div>
         </div>
@@ -126,8 +124,8 @@ export default function EducationSection() {
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr' }}>
             {[
               { label: 'LeetCode', value: 'Active — DSA & Algorithms', link: 'https://leetcode.com/u/nh22/', status: 'active' },
-              { label: 'Stochastic Calc', value: 'Self-study — Shreve Vol I & II', link: null, status: 'progress' },
-              { label: 'ICCCT 2025', value: 'Springer Nature — Apr 2026', link: 'https://link.springer.com/book/9789819534975', status: 'done' },
+              { label: 'LLM / ML', value: 'Self-study — transformers, evals, RAG', link: null, status: 'progress' },
+              { label: 'ICCCT 2025', value: 'Springer Nature — published online', link: 'https://link.springer.com/book/10.1007/978-981-95-3498-2', status: 'done' },
             ].map((item, i) => (
               <div key={item.label} style={{ padding: '0.9rem 1.25rem', borderRight: i < 2 ? '0.5px solid rgba(26,26,24,0.07)' : 'none', transition: 'background 0.2s' }}
                 onMouseEnter={e => (e.currentTarget as HTMLElement).style.background = 'rgba(31,60,136,0.02)'}

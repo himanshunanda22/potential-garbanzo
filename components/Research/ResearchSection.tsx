@@ -16,13 +16,13 @@ function MetaRow({ label, value }: { label: string; value: string }) {
 
 export default function ResearchSection() {
   const metaRows = [
-    { label: 'Proceedings', value: RESEARCH.proceedings },
+    { label: 'Publication', value: RESEARCH.proceedings },
     { label: 'Conference',  value: 'ICCCT 2025 — 7th International Conference on Communication & Computational Technologies' },
     { label: 'Organised by',value: 'Soft Computing Research Society (SCRS) & National Forensic Sciences University, Goa, India' },
     { label: 'Publisher',   value: 'Springer Nature Singapore' },
     { label: 'Series',      value: `${RESEARCH.series}, Vol. 1674` },
-    { label: 'Release date',value: RESEARCH.releaseDate },
-    { label: 'ISBN',        value: '978-981-95-3497-5 (print) · 978-981-95-3498-2 (eBook)' },
+    { label: 'Status',      value: RESEARCH.releaseDate },
+    { label: 'DOI / Link',  value: 'Available online via Springer: 10.1007/978-981-95-3498-2' },
   ]
 
   return (
@@ -32,7 +32,7 @@ export default function ResearchSection() {
           {/* Header */}
           <div style={{ background: 'var(--blue)', padding: '0.85rem 1.25rem', display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: '1rem' }}>
             <span style={{ fontFamily: 'var(--mono)', fontSize: '11px', color: 'rgba(255,255,255,0.85)', letterSpacing: '0.06em' }}>RESEARCH_PUBLICATION</span>
-            <span style={{ fontFamily: 'var(--mono)', fontSize: '10px', padding: '0.2rem 0.65rem', borderRadius: 100, background: 'rgba(255,193,7,0.2)', color: '#ffc107', border: '0.5px solid rgba(255,193,7,0.4)' }}>⧖ under publication</span>
+            <span style={{ fontFamily: 'var(--mono)', fontSize: '10px', padding: '0.2rem 0.65rem', borderRadius: 100, background: 'rgba(39,174,96,0.18)', color: '#d6f5df', border: '0.5px solid rgba(39,174,96,0.35)' }}>✓ published</span>
           </div>
 
           {/* Badges + title */}
@@ -46,9 +46,9 @@ export default function ResearchSection() {
                 <div key={badge.text} style={{ fontFamily: 'var(--mono)', fontSize: '10px', letterSpacing: '0.06em', padding: '0.2rem 0.65rem', borderRadius: 4, background: badge.bg, color: badge.color, border: `0.5px solid ${badge.border}` }}>{badge.text}</div>
               ))}
             </div>
-            <div style={{ fontFamily: 'var(--serif)', fontSize: '1.2rem', fontWeight: 700, lineHeight: 1.35, marginBottom: '0.5rem' }}>Paper Title to be Updated Upon Full Publication</div>
+            <div style={{ fontFamily: 'var(--serif)', fontSize: '1.2rem', fontWeight: 700, lineHeight: 1.35, marginBottom: '0.5rem' }}>Published Research Chapter in Springer Nature</div>
             <div style={{ fontSize: '13px', color: 'var(--ink2)', lineHeight: 1.7, maxWidth: '580px' }}>
-              Presented at {RESEARCH.note}. Published in the <em>Lecture Notes in Networks and Systems</em> series by Springer Nature, covering state-of-the-art research in intelligent systems, AI, and communication technologies.
+              Presented at {RESEARCH.note}. The work is now available in the <em>Lecture Notes in Networks and Systems</em> series by Springer Nature, covering applied intelligent systems, AI, and communication-driven research.
             </div>
           </div>
 
@@ -70,9 +70,9 @@ export default function ResearchSection() {
               onMouseEnter={e => { (e.currentTarget as HTMLElement).style.boxShadow = '0 4px 16px rgba(31,60,136,0.3)'; (e.currentTarget as HTMLElement).style.transform = 'translateY(-1px)' }}
               onMouseLeave={e => { (e.currentTarget as HTMLElement).style.boxShadow = ''; (e.currentTarget as HTMLElement).style.transform = '' }}
             >
-              View on Springer ↗
+              Read the published paper ↗
             </a>
-            <span style={{ fontFamily: 'var(--mono)', fontSize: '11px', color: 'var(--ink3)' }}>Full text available after {RESEARCH.releaseDate}</span>
+            <span style={{ fontFamily: 'var(--mono)', fontSize: '11px', color: 'var(--ink3)' }}>Open access through Springer Nature</span>
           </div>
         </GlowCard>
       </Reveal>
