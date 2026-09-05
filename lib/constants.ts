@@ -1,8 +1,8 @@
 // ─── Personal Details ─────────────────────────────────────────────────────────
 export const PERSON = {
   name: 'Himanshu Nanda',
-  role: 'Data Scientist',
-  aspiration: 'Aspiring Quant Researcher',
+  role: 'Applied Scientist',
+  aspiration: 'LLM & Machine Learning',
   company: 'AT&T',
   age: 23,
   email: 'himanshu.nanda22@gmail.com',
@@ -25,14 +25,14 @@ export const NAV_ITEMS = [
 
 // ─── Skills / Chips ───────────────────────────────────────────────────────────
 export const SKILLS = [
+  { text: 'LLM Systems',              type: 'blue'  },
   { text: 'Machine Learning',         type: 'blue'  },
-  { text: 'Probability Theory',       type: 'blue'  },
-  { text: 'Stochastic Processes',     type: 'blue'  },
+  { text: 'Deep Learning',            type: 'blue'  },
+  { text: 'RAG & Evaluation',         type: 'teal'  },
   { text: 'LangChain / LangGraph',    type: 'teal'  },
-  { text: 'Agentic AI Systems',       type: 'teal'  },
-  { text: 'Quantitative Finance',     type: 'teal'  },
-  { text: 'AT&T · Data Scientist',    type: 'coral' },
-  { text: 'Self-directed Quant Study',type: 'coral' },
+  { text: 'Model Optimization',       type: 'teal'  },
+  { text: 'AT&T · Applied ML',        type: 'coral' },
+  { text: 'Self-directed LLM Study',  type: 'coral' },
 ]
 
 // ─── Articles ─────────────────────────────────────────────────────────────────
@@ -45,9 +45,16 @@ export const ARTICLES = [
       'A cybersecurity middleware that uses Markov Decision Processes and Double DQN to intercept attacker sessions, respond with convincing fake data, and continuously learn optimal deception policies from live traffic. Includes a live platform dashboard, animated session simulation, and deep mathematical explainers.',
     url: '/deceptnet',          // internal Next.js route — opens the playground
     status: 'published' as const,
-    isProject: true,            // renders with project card styling
+    isProject: true,
   },
-  // ── Published Medium article ───────────────────────────────────────────────
+  {
+    tag: 'Medium · LLM Systems',
+    title: 'Your SLM Is Small, So Why Is Inference Still Expensive?',
+    excerpt:
+      'A practical breakdown of why small language models can still be costly at inference time — from KV cache behavior and memory bandwidth to batching, quantization, and serving architecture trade-offs.',
+    url: 'https://medium.com/@himanshunanda2002/your-slm-is-small-so-why-is-inference-still-expensive-593795550ed4',
+    status: 'published' as const,
+  },
   {
     tag: 'Medium · Statistics',
     title: 'I Tried to Fit a Line to Some Data and Ended Up Questioning How Reality Generates Points',
@@ -56,7 +63,6 @@ export const ARTICLES = [
     url: 'https://medium.com/@himanshunanda2002/i-tried-to-fit-a-line-to-some-data-and-ended-up-questioning-how-reality-generates-points-e003c18235a7',
     status: 'published' as const,
   },
-  // ── Drafts ────────────────────────────────────────────────────────────────
   {
     tag: 'Draft in Progress',
     title: 'The Geometry of Risk: Why Covariance Matrices Are Not Just Spreadsheets',
@@ -125,8 +131,8 @@ export const EDUCATION = [
     icon: '⬡',
     highlights: [
       'Specialisation in Cybersecurity, AI, and Data Science',
-      'Published research paper at ICCCT 2025 (Springer Nature)',
-      'Active participant in competitive programming and hackathons',
+      'Published in Springer Nature after ICCCT 2025',
+      'Active in AI/ML projects, LLM experimentation, and problem-solving competitions',
     ],
     relevantCourses: [
       'Data Structures & Algorithms',
@@ -167,17 +173,17 @@ export const EDUCATION = [
 
 // ─── Research Publication ─────────────────────────────────────────────────────
 export const RESEARCH = {
-  title: 'Paper Under Publication',
+  title: 'Published Research Chapter',
   venue: 'International Conference on Communication and Computational Technologies',
   venueShort: 'ICCCT 2025',
   publisher: 'Springer Nature',
   series: 'Lecture Notes in Networks and Systems',
   seriesVolume: 'Volume 1674',
-  proceedings: 'ICCCT 2025, Volume 5',
-  releaseDate: 'April 1, 2026',
-  springerUrl: 'https://link.springer.com/book/9789819534975',
+  proceedings: 'ICCCT 2025 — published in Springer Nature',
+  releaseDate: 'Published online',
+  springerUrl: 'https://link.springer.com/book/10.1007/978-981-95-3498-2',
   topics: ['Intelligent Systems', 'Artificial Intelligence', 'Machine Learning', 'Communication Technologies'],
-  status: 'under-publication' as const,
+  status: 'published' as const,
   note: 'Presented at ICCCT 2025, National Forensic Sciences University Goa, India · Feb 14–15, 2025',
 }
 
@@ -186,21 +192,21 @@ export const ABOUT_CARDS = [
   {
     icon: '∑',
     title: 'Where I Am Now',
-    body: 'Data Scientist at AT&T, building ML systems for large-scale telco data — predictive modeling, anomaly detection, and statistical analysis in production.',
+    body: 'Applied ML work at AT&T focused on machine learning, statistical modeling, and practical AI systems for large-scale telecommunication data and decision support.',
   },
   {
     icon: '→',
     title: 'Where I\'m Heading',
-    body: 'Quantitative Research. I\'m drawn to the mathematical rigor of finance — stochastic calculus, risk models, option pricing, and algorithmic strategy design.',
+    body: 'I want to build a career as an Applied Scientist in LLMs and machine learning — combining model design, experimentation, evaluation, and production impact.',
   },
   {
     icon: '⬡',
     title: 'Building Agentic Systems',
-    body: 'Actively building multi-agent AI pipelines using LangGraph and LangChain — stateful graphs, RAG systems, tool-using agents, and Reflexion-style self-improving loops.',
+    body: 'Actively building multi-agent AI pipelines using LangGraph and LangChain — stateful graphs, RAG systems, tool-using agents, and self-improving workflows.',
   },
   {
     icon: 'σ',
     title: 'What I\'m Studying',
-    body: 'Shreve\'s Stochastic Calculus, Glasserman\'s Monte Carlo Methods, Gatheral\'s The Volatility Surface. Also grinding LeetCode for quant interview preparation.',
+    body: 'Transformer architectures, LLM evaluation, fine-tuning strategies, retrieval systems, model efficiency, and practical deployment patterns for real-world ML applications.',
   },
 ]

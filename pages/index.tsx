@@ -22,11 +22,11 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>{PERSON.name} — Data Scientist · Aspiring Quant Researcher</title>
-        <meta name="description" content="Portfolio of Himanshu Nanda — data scientist at AT&T, building toward quantitative research. Interactive math simulations, LangGraph agentic AI projects, writing." />
+        <title>{PERSON.name} — Applied Scientist · LLM / ML</title>
+        <meta name="description" content="Portfolio of Himanshu Nanda — an applied scientist in LLM and machine learning, building AI systems, evaluation pipelines, and research-driven ML work." />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <meta property="og:title" content="Himanshu Nanda — Aspiring Quant Researcher" />
-        <meta property="og:description" content="Data Scientist building toward quant research. Interactive strategy simulations, agentic AI projects, and mathematical writing." />
+        <meta property="og:title" content="Himanshu Nanda — Applied Scientist in LLM / ML" />
+        <meta property="og:description" content="Applied ML practitioner building LLM systems, research-driven experiments, and agentic AI workflows." />
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
@@ -41,7 +41,7 @@ export default function Home() {
       <Divider />
 
       {/* ── ABOUT ── */}
-      <Section id="about" label="Background" title="About Me" sub="A data scientist learning to think like a quant.">
+      <Section id="about" label="Background" title="About Me" sub="An applied ML and LLM-focused builder with a research mindset.">
         <About />
       </Section>
 
@@ -92,21 +92,21 @@ export default function Home() {
       <Divider />
 
       {/* ── RESEARCH ── */}
-      <Section id="research" label="Academic Work" title="Research" sub="A paper under publication — with more to come.">
+      <Section id="research" label="Academic Work" title="Research" sub="Published work in intelligent systems and applied ML research.">
         <ResearchSection />
       </Section>
 
       <Divider />
 
       {/* ── ARTICLES ── */}
-      <Section id="articles" label="Writing" title="Articles" sub="Translating mathematical intuition into prose.">
+      <Section id="articles" label="Writing" title="Articles" sub="Writing on LLM systems, inference efficiency, and applied ML thinking.">
         <Articles />
       </Section>
 
       <Divider />
 
       {/* ── CONTACT ── */}
-      <Section id="contact" label="Get in Touch" title="Contact" sub="Open to conversations about quant research, ML, agentic AI, and mathematics.">
+      <Section id="contact" label="Get in Touch" title="Contact" sub="Open to conversations about LLMs, applied ML, agentic AI, and research-driven product work.">
         <Contact />
       </Section>
 

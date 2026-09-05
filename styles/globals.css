@@ -121,3 +121,442 @@ a, button, [role=button], input, textarea, select, label { cursor: none !importa
 section {
   transition: opacity 0.3s ease;
 }
+
+.deceptnet-page {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 5rem 2rem 4rem;
+}
+
+.deceptnet-kicker,
+.deceptnet-section-header {
+  font-family: var(--mono);
+  font-size: 11px;
+  color: var(--ink3);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 0.4rem;
+}
+
+.deceptnet-title {
+  font-family: var(--serif);
+  font-size: clamp(1.6rem, 3vw, 2.6rem);
+  font-weight: 700;
+  margin-bottom: 0.3rem;
+  color: var(--ink);
+  line-height: 1.1;
+}
+
+.deceptnet-subtitle {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 1rem;
+  color: var(--ink2);
+  margin-bottom: 1.25rem;
+}
+
+.deceptnet-summary {
+  font-size: 15px;
+  color: var(--ink2);
+  max-width: 580px;
+  line-height: 1.8;
+  margin-bottom: 1.5rem;
+}
+
+.deceptnet-emphasis {
+  color: var(--ink);
+}
+
+.deceptnet-tag-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-bottom: 3rem;
+}
+
+.deceptnet-tag {
+  font-family: var(--mono);
+  font-size: 11px;
+  padding: 0.2rem 0.65rem;
+  border-radius: 100px;
+  border: 0.5px solid rgba(31, 60, 136, 0.35);
+  color: var(--blue);
+  background: rgba(31, 60, 136, 0.05);
+}
+
+.deceptnet-section-title {
+  font-family: var(--serif);
+  font-size: clamp(1.3rem, 2.5vw, 1.8rem);
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  color: var(--ink);
+}
+
+.deceptnet-pipeline-shell {
+  border: 0.5px solid rgba(26, 26, 24, 0.1);
+  border-radius: 12px;
+  background: #fff;
+  overflow: hidden;
+  margin-bottom: 3rem;
+}
+
+.deceptnet-pipeline-header {
+  background: var(--blue);
+  padding: 0.7rem 1.25rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.deceptnet-pipeline-label {
+  font-family: var(--mono);
+  font-size: 11px;
+  color: rgba(255, 255, 255, 0.85);
+  letter-spacing: 0.06em;
+}
+
+.deceptnet-pipeline-status {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--teal);
+  display: inline-block;
+  animation: pulse 2s ease-in-out infinite;
+}
+
+.deceptnet-pipeline-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  padding: 0;
+}
+
+.deceptnet-pipeline-step {
+  padding: 1rem 1.25rem;
+}
+
+.deceptnet-pipeline-step.has-right-border {
+  border-right: 0.5px solid rgba(26, 26, 24, 0.07);
+}
+
+.deceptnet-pipeline-step.is-top-row {
+  border-bottom: 0.5px solid rgba(26, 26, 24, 0.07);
+}
+
+.deceptnet-pipeline-step-index {
+  font-family: var(--mono);
+  font-size: 10px;
+  color: var(--ink3);
+  letter-spacing: 0.06em;
+  margin-bottom: 0.3rem;
+}
+
+.deceptnet-pipeline-step-title {
+  font-family: var(--serif);
+  font-size: 0.95rem;
+  font-weight: 700;
+  margin-bottom: 0.3rem;
+}
+
+.deceptnet-pipeline-step-body {
+  font-size: 12px;
+  color: var(--ink2);
+  line-height: 1.6;
+}
+
+.deceptnet-local-note {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 0.9rem;
+  color: var(--ink2);
+  margin-bottom: 1rem;
+}
+
+.deceptnet-inline-code {
+  font-family: var(--mono);
+  font-size: 11px;
+  color: var(--blue);
+}
+
+.deceptnet-dashboard-shell {
+  border: 0.5px solid rgba(26, 26, 24, 0.1);
+  border-radius: 12px;
+  background: #fff;
+  overflow: hidden;
+  margin-bottom: 1rem;
+}
+
+.deceptnet-dashboard-toggle {
+  width: 100%;
+  padding: 1rem 1.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  text-align: left;
+  transition: background 0.2s;
+}
+
+.deceptnet-dashboard-toggle.is-open {
+  background: rgba(31, 60, 136, 0.03);
+}
+
+.deceptnet-dashboard-toggle-label {
+  font-family: var(--mono);
+  font-size: 10px;
+  color: var(--coral);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: 0.2rem;
+}
+
+.deceptnet-dashboard-toggle-text {
+  font-size: 14px;
+  color: var(--ink);
+  line-height: 1.4;
+}
+
+.deceptnet-dashboard-chevron {
+  font-family: var(--mono);
+  font-size: 14px;
+  color: var(--ink3);
+  display: inline-block;
+  flex-shrink: 0;
+  margin-left: 1rem;
+  transition: transform 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.deceptnet-dashboard-toggle.is-open .deceptnet-dashboard-chevron {
+  transform: rotate(180deg);
+}
+
+.deceptnet-dashboard-body {
+  border-top: 0.5px solid rgba(26, 26, 24, 0.07);
+  padding: 2rem;
+  text-align: center;
+}
+
+.deceptnet-dashboard-title {
+  font-family: var(--serif);
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.deceptnet-dashboard-copy {
+  font-size: 13px;
+  color: var(--ink2);
+  line-height: 1.7;
+  max-width: 400px;
+  margin: 0 auto 1.25rem;
+}
+
+.deceptnet-dashboard-link-row {
+  display: flex;
+  gap: 0.75rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.deceptnet-primary-link,
+.deceptnet-secondary-link {
+  font-family: var(--mono);
+  font-size: 12px;
+  padding: 0.5rem 1.1rem;
+  border-radius: 6px;
+  text-decoration: none;
+  transition: transform 0.2s ease;
+}
+
+.deceptnet-primary-link {
+  background: var(--blue);
+  color: #fff;
+}
+
+.deceptnet-secondary-link {
+  background: transparent;
+  color: var(--blue);
+  border: 0.5px solid rgba(31, 60, 136, 0.35);
+}
+
+.deceptnet-primary-link:hover,
+.deceptnet-secondary-link:hover {
+  transform: translateY(-1px);
+}
+
+.deceptnet-terminal-shell {
+  border: 0.5px solid rgba(26, 26, 24, 0.1);
+  border-radius: 12px;
+  background: #1a1a18;
+  overflow: hidden;
+}
+
+.deceptnet-terminal-header {
+  background: #252522;
+  padding: 0.6rem 1.25rem;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  border-bottom: 0.5px solid rgba(255, 255, 255, 0.05);
+}
+
+.deceptnet-terminal-dot {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.deceptnet-terminal-dot.terminal-red {
+  background: #ff5f57;
+}
+
+.deceptnet-terminal-dot.terminal-yellow {
+  background: #febc2e;
+}
+
+.deceptnet-terminal-dot.terminal-green {
+  background: #28c840;
+}
+
+.deceptnet-terminal-caption {
+  color: #555;
+  font-size: 11px;
+  margin-left: 0.5rem;
+  font-family: var(--mono);
+}
+
+.deceptnet-terminal-pre {
+  padding: 1.25rem;
+  margin: 0;
+  font-size: 12px;
+  line-height: 2;
+  overflow-x: auto;
+  font-family: var(--mono);
+  color: #c8f6c8;
+  white-space: pre-wrap;
+}
+
+.deceptnet-main {
+  min-height: calc(100vh - 52px);
+  background: var(--bg);
+}
+
+.deceptnet-nav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(247, 245, 242, 0.97);
+  backdrop-filter: blur(12px);
+  border-bottom: 0.5px solid rgba(26, 26, 24, 0.08);
+  padding: 0 2rem;
+  height: 52px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  transition: background 0.4s ease;
+}
+
+.deceptnet-nav-back {
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--ink3);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.deceptnet-nav-back:hover,
+.deceptnet-nav-back:focus-visible {
+  color: var(--ink);
+}
+
+.deceptnet-brand {
+  font-family: var(--serif);
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--ink);
+  letter-spacing: -0.01em;
+}
+
+.deceptnet-brand-mark {
+  display: inline-block;
+  width: 0.65rem;
+  height: 0.65rem;
+  border-radius: 50%;
+  background: var(--coral);
+  vertical-align: middle;
+}
+
+.deceptnet-brand-code {
+  display: inline-block;
+  font-family: var(--mono);
+  font-size: 20px;
+  font-weight: 400;
+  color: var(--ink3);
+  margin-left: 8px;
+  letter-spacing: 0.04em;
+}
+
+.deceptnet-subnav {
+  display: flex;
+  gap: 0;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.deceptnet-subnav-item {
+  position: relative;
+}
+
+.deceptnet-subnav-link {
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding: 0 14px;
+  height: 52px;
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.03em;
+  text-decoration: none;
+  color: var(--ink3);
+  transition: color 0.2s ease;
+}
+
+.deceptnet-subnav-link:hover,
+.deceptnet-subnav-link:focus-visible,
+.deceptnet-subnav-link.active {
+  color: var(--ink);
+}
+
+.deceptnet-subnav-indicator {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: var(--coral);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.deceptnet-subnav-link.active .deceptnet-subnav-indicator {
+  transform: scaleX(1);
+}
+
+.deceptnet-embed-shell {
+  width: 100%;
+  height: calc(100vh - 52px);
+  overflow: hidden;
+}
+
+.deceptnet-embed-frame {
+  width: 100%;
+  height: 100%;
+  border: none;
+  display: block;
+}
